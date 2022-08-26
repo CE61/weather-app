@@ -33,16 +33,12 @@ nav .input-area button {
   font-size: 2vw;
 }
 
-.location-slideshow {
-  background-color: darkblue;
-  height: 5vh;
-}
-
 .main-container {
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: auto;
-  height: 85vh;
+  height: 90vh;
+  background-color: darkblue;
 }
 .main-container .left-container {
   position: relative;
@@ -52,7 +48,6 @@ nav .input-area button {
   background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
-  background-color: slateblue;
 }
 .main-container .left-container #textCurrentStatus {
   position: absolute;
@@ -91,7 +86,6 @@ nav .input-area button {
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: slateblue;
 }
 .main-container .right-container .info-modal {
   display: flex;
