@@ -35,13 +35,12 @@ submitButton.addEventListener("click",()=>{
                     .then(response => response.json())
                     .then(forecastData =>{
                         let dayCount = 1;
+                        console.log(forecastData);
                         for(let i = 0; i < 40; i += 8){
                             let temp1 = Math.round(forecastData.list[i].main.temp) + " F";
-                            let weather1 = forecastData.list[i].weather[0].main;
-                            let date1 = new Date(forecastData.list[i].dt * 1000);
+                            let date1 = new Date((forecastData.list[i].dt + (forecastData.city.timezone - (-14400))) * 1000);
                             let temp2 = Math.round(forecastData.list[i+4].main.temp) + " F";
-                            let weather2 = forecastData.list[i+4].weather[0].main;
-                            let date2 = new Date(forecastData.list[i+4].dt * 1000);
+                            let date2 = new Date((forecastData.list[i+4].dt + (forecastData.city.timezone - (-14400))) * 1000);
 
                             const dayElement = document.getElementById("day" + dayCount);
                             dayElement.children[1].innerText = date1.getHours()+":00";
@@ -86,9 +85,9 @@ function changeForecastWeather(element, weatherData, locationData){
     weatherCode==="Tornado"){
         element.style.backgroundImage = `url('./images/fog.png')`;
     }else if(weatherCode==="Clear"){
-        const date = new Date(weatherData.dt * 1000);
-        const sunriseDate = new Date(locationData.city.sunrise * 1000);
-        const sunsetDate = new Date(locationData.city.sunset * 1000);
+        const date = new Date((weatherData.dt + (locationData.city.timezone-(-14400)) )* 1000);
+        const sunriseDate = new Date((locationData.city.sunrise + (locationData.city.timezone-(-14400)) )* 1000);
+        const sunsetDate = new Date((locationData.city.sunset + (locationData.city.timezone-(-14400)) )* 1000);
         const timeNow = date.getHours()*60 + date.getMinutes();
         const sunriseTime = sunriseDate.getHours()*60 + sunriseDate.getMinutes();
         const sunsetTime = sunsetDate.getHours()*60 + sunsetDate.getMinutes();
@@ -104,6 +103,11 @@ function changeForecastWeather(element, weatherData, locationData){
     }
 }
 function changeCurrentWeather(weatherData){
+    let date = new Date(weatherData.dt*1000);
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let timeNow = hours*60 + minutes;
+    console.log(timeNow)
     const weatherCode = weatherData.weather[0].main;
     const currentWeatherStatus = document.querySelectorAll(".weather-icon")[0];
     const backgroundWeatherStatus = document.querySelectorAll(".left-container")[0];
@@ -130,17 +134,13 @@ function changeCurrentWeather(weatherData){
         currentWeatherStatus.classList.add("fog");
         backgroundWeatherStatus.classList.add("fog");
     }else if(weatherCode==="Clear"){
-        let date = new Date(weatherData.dt*1000);
-        let hours = date.getHours();
-        let minutes = date.getMinutes();
-        let timeNow = hours*60 + minutes;
-        let eightAM = 8*60;
+        let sixAM = 6*60;
         let eightPM = 20*60;
 
-        if(timeNow<=eightAM || timeNow>=eightPM){
+        if(timeNow<=sixAM || timeNow>=eightPM){
             currentWeatherStatus.classList.add("moon");
             backgroundWeatherStatus.classList.add("moon");
-        }else if(timeNow>=eightAM || timeNow<=eightPM){
+        }else if(timeNow>=sixAM || timeNow<=eightPM){
             currentWeatherStatus.classList.add("sun");
             backgroundWeatherStatus.classList.add("sun");
         }
