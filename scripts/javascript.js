@@ -1,3 +1,5 @@
+"use strict";
+
 const currentTextStatus = document.getElementById("textCurrentStatus");
 const currentTemperature = document.getElementById("currentTemp");
 const currentLocation = document.getElementById("currentLocation");
@@ -68,11 +70,11 @@ submitButton.addEventListener("click",()=>{
 function changeForecastWeather(element, weatherData, locationData){
     const weatherCode = weatherData.weather[0].main;
     if(weatherCode==="Thunderstorm"){
-        element.style.backgroundImage = `url(./thunderstorm.png)`
+        element.style.backgroundImage = `url('./images/thunderstorm.png')`;
     }else if(weatherCode==="Snow"){
-        element.style.backgroundImage = `url(./snow.png)`
+        element.style.backgroundImage = `url(./images/snow.png)`;
     }else if(weatherCode==="Drizzle"||weatherCode==="Rain"){
-        element.style.backgroundImage = `url(./rain-cloud.png)`
+        element.style.backgroundImage = `url('./images/rain-cloud.png')`;
     }else if(weatherCode==="Mist"||
     weatherCode==="Smoke"||
     weatherCode==="Haze"||
@@ -82,7 +84,7 @@ function changeForecastWeather(element, weatherData, locationData){
     weatherCode==="Ash"||
     weatherCode==="Squall"||
     weatherCode==="Tornado"){
-        element.style.backgroundImage = `url(./fog.png)`
+        element.style.backgroundImage = `url('./images/fog.png')`;
     }else if(weatherCode==="Clear"){
         const date = new Date(weatherData.dt * 1000);
         const sunriseDate = new Date(locationData.city.sunrise * 1000);
@@ -93,12 +95,12 @@ function changeForecastWeather(element, weatherData, locationData){
 
 
         if(timeNow<=sunriseTime || timeNow>=sunsetTime){
-            element.style.backgroundImage = `url(./moon.png)`
+            element.style.backgroundImage = `url('./images/moon.png')`;
         }else if(timeNow>=sunriseTime || timeNow<=sunsetTime){
-            element.style.backgroundImage = `url(./sun.png)`
+            element.style.backgroundImage = `url('./images/sun.png')`;
         }
     }else if(weatherCode==="Clouds"){
-        element.style.backgroundImage = `url(./sun.png)`
+        element.style.backgroundImage = `url('./images/sun.png')`;
     }
 }
 function changeCurrentWeather(weatherData){

@@ -134,7 +134,7 @@ nav .input-area button {
 .main-container .right-container .info-modal .weekly-grid-container .weekday .imageContainer {
   width: 3vw;
   height: 7vh;
-  background-image: url("./rain-cloud.png");
+  background-image: url("../images/rain-cloud.png");
   background-size: cover;
   background-position: center;
 }
@@ -148,7 +148,7 @@ nav .input-area button {
 .main-container .right-container .info-modal .weekly-grid-container .today .imageContainer {
   width: 3vw;
   height: 7vh;
-  background-image: url("./rain-cloud.png");
+  background-image: url("../images/rain-cloud.png");
   background-size: cover;
   background-position: center;
 }
@@ -158,57 +158,57 @@ nav .input-area button {
 }
 
 .weather-icon.sun {
-  background-image: url("./sun.png");
+  background-image: url("../images/sun.png");
 }
 
 .weather-icon.moon {
-  background-image: url("./moon.png");
+  background-image: url("../images/moon.png");
 }
 
 .weather-icon.cloud {
-  background-image: url("./cloud.png");
+  background-image: url("../images/cloud.png");
 }
 
 .weather-icon.thunderstorm {
-  background-image: url("./thunderstorm.png");
+  background-image: url("../images/thunderstorm.png");
 }
 
 .weather-icon.rain {
-  background-image: url("./rain-cloud.png");
+  background-image: url("../images/rain-cloud.png");
 }
 
 .weather-icon.snow {
-  background-image: url("./snow.png");
+  background-image: url("../images/snow.png");
 }
 
 .weather-icon.fog {
-  background-image: url("./fog.png");
+  background-image: url("../images/fog.png");
 }
 
 .left-container.sun {
-  background-image: url("./clearbluesky.gif");
+  background-image: url("../images/clearbluesky.gif");
 }
 
 .left-container.moon {
-  background-image: url("./clearnightsky.gif");
+  background-image: url("../images/clearnightsky.gif");
 }
 
 .left-container.cloud {
-  background-image: url("./cloudysky.gif");
+  background-image: url("../images/cloudysky.gif");
 }
 
 .left-container.thunderstorm {
-  background-image: url("./thunderstorm.gif");
+  background-image: url("../images/thunderstorm.gif");
 }
 
 .left-container.rain {
-  background-image: url("./rain.gif");
+  background-image: url("../images/rain.gif");
 }
 
 .left-container.snow {
-  background-image: url("./snow.gif");
+  background-image: url("../images/snow.gif");
 }
 
 .left-container.fog {
-  background-image: url("./fog.gif");
+  background-image: url("../images/fog.gif");
 }/*# sourceMappingURL=style.css.map */
