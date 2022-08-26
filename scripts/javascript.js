@@ -21,7 +21,7 @@ submitButton.addEventListener("click",()=>{
                     let locationName = data.name + ", " + data.country;
                     console.log("lat: " + data.lat + "  lon: " + data.lon);
                     // Retrieve today's forecast
-                    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=`+data.lat+`&lon=`+data.lon+`&appid=0c8635139e6e422b431bd6cbba0ad062`)
+                    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=`+data.lat+`&lon=`+data.lon+`&appid=0c8635139e6e422b431bd6cbba0ad062`,{mode: "cors"})
                     .then(response=>response.json())
                     .then(weatherData =>{
                         currentTextStatus.innerText = "Right now it's ";
@@ -31,7 +31,7 @@ submitButton.addEventListener("click",()=>{
                         console.log(weatherData);
                     });
                     // Retrieve 5 day forecast
-                    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=`+data.lat+`&lon=`+data.lon+`&units=imperial&appid=0c8635139e6e422b431bd6cbba0ad062`)
+                    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=`+data.lat+`&lon=`+data.lon+`&units=imperial&appid=0c8635139e6e422b431bd6cbba0ad062`,{mode: "cors"})
                     .then(response => response.json())
                     .then(forecastData =>{
                         let dayCount = 1;
