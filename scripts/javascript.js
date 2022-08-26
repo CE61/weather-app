@@ -94,10 +94,10 @@ function changeForecastWeather(element, weatherData, locationData){
         const sunsetTime = sunsetDate.getHours()*60 + sunsetDate.getMinutes();
 
 
-        if(timeNow<=sunriseTime || timeNow>=sunsetTime){
-            element.style.backgroundImage = `url('./images/moon.png')`;
-        }else if(timeNow>=sunriseTime || timeNow<=sunsetTime){
+        if(timeNow>=sunriseTime && timeNow<sunsetTime){
             element.style.backgroundImage = `url('./images/sun.png')`;
+        }else if(timeNow<sunriseTime || timeNow>=sunsetTime){
+            element.style.backgroundImage = `url('./images/moon.png')`;
         }
     }else if(weatherCode==="Clouds"){
         element.style.backgroundImage = `url('./images/sun.png')`;
