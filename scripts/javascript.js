@@ -100,7 +100,7 @@ function changeForecastWeather(element, weatherData, locationData){
             element.style.backgroundImage = `url('./images/moon.png')`;
         }
     }else if(weatherCode==="Clouds"){
-        element.style.backgroundImage = `url('./images/sun.png')`;
+        element.style.backgroundImage = `url('./images/cloud.png')`;
     }
 }
 function changeCurrentWeather(weatherData){
