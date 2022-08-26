@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <span class="site-title">Weather App</span>
+        <div class="input-area">
+            <label for="location-data">Enter ZIP code here</label>
+            <input type="text" name="location-data" id="location-data" size="12">
+            <button id="submit-location">Submit</button>
+        </div>
+    </nav>
+    <div class="location-slideshow"></div>
+    <div class="main-container">
+        <div class="left-container">
+            <span id="textCurrentStatus"></span>
+            <span class="temperature" id="currentTemp"></span>
+            <p class="weather-icon"></p>
+            <span class="location" id="currentLocation"></span>
+            <span class="current-time" id="currentTime"></span>
+        </div>
+        <div class="right-container">
+            <div class="info-modal hidden">
+                <span class="info-title">5 Day Forecast</span>
+                <div class="weekly-grid-container">
+                    <div class="today" id="day1">
+                        <span class="dayName"></span>
+                        <span class="hourData1"></span>
+                        <span class="dayTemperature"></span>
+                        <div class="imageContainer"></div>
+                        <span class="hourData2"></span>
+                        <span class="nightTemperature"></span>
+                        <div class="imageContainer"></div>
+                    </div>
+                    <div class="weekday" id="day2">
+                        <span class="dayName"></span>
+                        <span class="hourData1"></span>
+                        <span class="dayTemperature"></span>
+                        <div class="imageContainer"></div>
+                        <span class="hourData2"></span>
+                        <span class="nightTemperature"></span>
+                        <div class="imageContainer"></div>
+                    </div>
+                    <div class="weekday" id="day3">
+                        <span class="dayName"></span>
+                        <span class="hourData1"></span>
+                        <span class="dayTemperature"></span>
+                        <div class="imageContainer"></div>
+                        <span class="hourData2"></span>
+                        <span class="nightTemperature"></span>
+                        <div class="imageContainer"></div>
+                    </div>
+                    <div class="weekday" id="day4">
+                        <span class="dayName"></span>
+                        <span class="hourData1"></span>
+                        <span class="dayTemperature"></span>
+                        <div class="imageContainer"></div>
+                        <span class="hourData2"></span>
+                        <span class="nightTemperature"></span>
+                        <div class="imageContainer"></div>
+                    </div>
+                    <div class="weekday" id="day5">
+                        <span class="dayName"></span>
+                        <span class="hourData1"></span>
+                        <span class="dayTemperature"></span>
+                        <div class="imageContainer"></div>
+                        <span class="hourData2"></span>
+                        <span class="nightTemperature"></span>
+                        <div class="imageContainer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./javascript.js"></script>
+</body>
+</html>
