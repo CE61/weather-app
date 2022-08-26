@@ -12,7 +12,7 @@ submitButton.addEventListener("click",()=>{
         alert("Invalid zipcode.");
     }else{
         try{
-            fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=`+zipcode+`&appid=0c8635139e6e422b431bd6cbba0ad062`)
+            fetch(`https://api.openweathermap.org/geo/1.0/zip?zip=`+zipcode+`&appid=0c8635139e6e422b431bd6cbba0ad062`,{mode: "cors"})
             .then((response) => response.json())
             .then((data)=>{
                 if(data.cod == "404"||data.cod == "400"){
